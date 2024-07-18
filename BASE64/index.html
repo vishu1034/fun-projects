@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64/Base64URL Encoder and Decoder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Base64/Base64URL Encoder and Decoder</h1>
+        <div class="toggle">
+            <label for="encodingType">Select Encoding Type:</label>
+            <select id="encodingType">
+                <option value="base64">Base64</option>
+                <option value="base64url">Base64URL</option>
+            </select>
+        </div>
+        <textarea id="inputText" placeholder="Enter text here..."></textarea>
+        <div class="buttons">
+            <button id="encodeButton">Encode</button>
+            <button id="decodeButton">Decode</button>
+        </div><br><br>
+        <textarea id="outputText" placeholder="Result will appear here..." readonly></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
