@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund SWP Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mutual Fund SWP Calculator</h1>
+        <form id="swpForm">
+            <label for="totalInvestment">Total Investment:</label>
+            <input type="number" id="totalInvestment" value="0" required>
+            
+            <label for="withdrawalPerMonth">Withdrawal per Month:</label>
+            <input type="number" id="withdrawalPerMonth" value="0" required>
+            
+            <label for="expectedReturn">Expected Return (%):</label>
+            <input type="range" id="expectedReturn" min="0" max="100" step="1" value="0">
+            <span id="expectedReturnValue">0%</span>
+            
+            <label for="tenure">Tenure (Years):</label>
+            <input type="range" id="tenure" min="1" max="100" step="1" value="0">
+            <span id="tenureValue">0 Years</span>
+            
+            <h2>Final Value: <span id="finalValue">Calculating...</span></h2>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

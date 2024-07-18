@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mutual Fund Calculator</h1>
+        <div>
+            <label>
+                <input type="radio" name="investmentType" value="sip" checked> SIP
+            </label>
+            <label>
+                <input type="radio" name="investmentType" value="lumpsum"> Lumpsum
+            </label>
+        </div>
+
+        <div id="sipInputs">
+            <label for="monthlyInvestment">Monthly Investment:</label>
+            <input type="number" id="monthlyInvestment" value="0">
+        </div>
+
+        <div id="lumpsumInputs" style="display: none;">
+            <label for="totalInvestment">Total Investment:</label>
+            <input type="number" id="totalInvestment" value="0">
+        </div>
+
+        <label for="expectedReturn">Expected Return Rate (%):</label>
+        <input type="range" id="expectedReturn" min="1" max="100" value="0">
+        <span id="expectedReturnValue">0%</span>
+
+        <label for="timePeriod">Time Period (Years):</label>
+        <input type="range" id="timePeriod" min="1" max="100" value="0">
+        <span id="timePeriodValue">0 years</span>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <div id="results">
+            <h2>Results</h2>
+            <p>Invested Amount: <span id="investedAmount"></span></p>
+            <p>Estimated Returns: <span id="estimatedReturns"></span></p>
+            <p>Total Value: <span id="totalValue"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

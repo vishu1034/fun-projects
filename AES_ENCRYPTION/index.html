@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES-256 Encryptor/Decryptor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AES-256 Encryptor/Decryptor</h1>
+        <div>
+            <label for="key">Key:</label>
+            <input type="password" id="key" placeholder="Enter key">
+        </div>
+        <div>
+            <label for="plaintext">Plain Text:</label>
+            <textarea id="plaintext" placeholder="Enter text to encrypt"></textarea>
+        </div>
+        <div>
+            <button onclick="encrypt()">Encrypt</button>
+        </div>
+        <div>
+            <label for="ciphertext">Cipher Text:</label>
+            <textarea id="ciphertext" placeholder="Encrypted text will appear here"></textarea>
+        </div>
+        <div>
+            <button onclick="decrypt()">Decrypt</button>
+        </div>
+        <div>
+            <label for="decryptedtext">Decrypted Text:</label>
+            <textarea id="decryptedtext" placeholder="Decrypted text will appear here"></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hash-output {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hashing</h1>
+        <input type="text" id="inputString" placeholder="Enter string to hash">
+        <button onclick="generateHashes()">Generate Hashes</button>
+        <div id="hashes"></div>
+    </div>
+
+    <script src="crypto-js.min.js"></script>
+    <script>
+        function generateHashes() {
+            const inputString = document.getElementById('inputString').value;
+            const hashesDiv = document.getElementById('hashes');
+            hashesDiv.innerHTML = '';
+
+            if (!inputString) {
+                hashesDiv.innerHTML = '<p>Please enter a string to hash.</p>';
+                return;
+            }
+
+            const hashTypes = {
+                'MD5': CryptoJS.MD5,
+                'SHA-1': CryptoJS.SHA1,
+                'SHA-256': CryptoJS.SHA256,
+                'SHA-512': CryptoJS.SHA512,
+                'SHA-3': CryptoJS.SHA3,
+                'RIPEMD-160': CryptoJS.RIPEMD160,
+            };
+
+            for (const [name, hashFunction] of Object.entries(hashTypes)) {
+                const hash = hashFunction(inputString).toString();
+                const hashOutput = document.createElement('div');
+                hashOutput.className = 'hash-output';
+                hashOutput.innerHTML = `<strong>${name}:</strong> ${hash}`;
+                hashesDiv.appendChild(hashOutput);
+            }
+        }
+    </script>
+</body>
+</html>
